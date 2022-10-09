@@ -1,1 +1,2 @@
-# rock-paper-scissors
+# Rock Paper Scissors (The Odin Project)
+This project is part of the [JavaScript Basics](https://www.theodinproject.com/paths/foundations/courses/foundations#javascript-basics) course and is meant to demonstrate basic JavaScript skills learned from lessons 1-6.
