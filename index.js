@@ -11,24 +11,39 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection===computerSelection.toUpperCase()) {
         result = "Tie game!";
     } else if (playerSelection==="ROCK" && computerSelection==="Scissors") {
+        playerScore++;
         result = "You win! Rock beats Scissors.";
     } else if (playerSelection==="ROCK" && computerSelection==="Paper") {
+        computerScore++;
         result = "You lose! Paper beats Rock.";
     } else if (playerSelection==="PAPER" && computerSelection==="Rock") {
+        playerScore++;
         result = "You win! Paper beats Rock.";
     } else if (playerSelection==="PAPER" && computerSelection==="Scissors") {
+        computerScore++;
         result = "You lose! Scissors beats Paper."
     } else if (playerSelection==="SCISSORS" && computerSelection==="Paper") {
+        playerScore++;
         result = "You win! Scissors beats Paper."
     } else if (playerSelection==="SCISSORS" && computerSelection==="Rock") {
+        computerScore++;
         result = "You lose! Rock beats Scissors."
     }    
     return result;
 }
 
-const playerSelection = prompt("Rock, paper, or scissors?").toUpperCase();
-const computerSelection = getComputerChoice(items);
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
-
 // Create function for a 5-round game
+let playerScore = 0;
+let computerScore = 0;
+
+function game() {
+    for (let i=0; i<5; i++) {
+        const playerSelection = prompt("Rock, paper, or scissors?").toUpperCase();
+        const computerSelection = getComputerChoice(items);
+        console.log(`The computer chose ${computerSelection}.`);
+        console.log(playRound(playerSelection, computerSelection));
+        console.log(`Your score: ${playerScore} | Computer score: ${computerScore}`);
+    }
+}
+
+console.log(game());
