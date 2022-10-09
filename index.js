@@ -44,6 +44,14 @@ function game() {
         console.log(playRound(playerSelection, computerSelection));
         console.log(`Your score: ${playerScore} | Computer score: ${computerScore}`);
     }
+    // Determine winner, loser, or tie at end of game
+    if (playerScore>computerScore) {
+        return `You win this game! Your final score: ${playerScore} | Computer final score: ${computerScore}`;
+    } else if (playerScore<computerScore) {
+        return `You lost this game. Your final score: ${playerScore} | Computer final score: ${computerScore}`;
+    } else {
+        return `This game is a tie. Your final score: ${playerScore} | Computer final score: ${computerScore}`;
+    }
 }
 
 console.log(game());
