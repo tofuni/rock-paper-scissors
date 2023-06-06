@@ -1,1 +1,2 @@
 # rock-paper-scissors
+A simple implementation of a "rock, paper, scissors" game that is meant to apply introductory and foundational JS concepts learned from [The Odin Project](https://www.theodinproject.com/).
