@@ -1,4 +1,14 @@
 // Declare a function that represents the computer's play
+function getComputerChoice() {
+    let randomNumber = Math.floor(Math.random() * 3);
+    if (randomNumber === 0) {
+        return "rock";
+    } else if (randomNumber === 1) {
+        return "paper";
+    } else if (randomNumber === 2) {
+        return "scissors";
+    }
+}
 
 // Ask the player to input 'rock', 'paper', or 'scissors'
 // If the player inputs something else, then print 'Error! Please input rock, paper, or scissors.'
