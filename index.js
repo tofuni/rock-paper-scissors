@@ -9,17 +9,16 @@ function getComputerChoice() {
         return "scissors";
     }
 }
-const computerSelection = getComputerChoice();
-
-// Ask the player to input 'rock', 'paper', or 'scissors'
-let playerSelection = prompt("Input 'rock', 'paper', or 'scissors'");
 
 // If the player inputs something else, then print 'Error! Please input rock, paper, or scissors.'
 // Else initialize RPS game
 
-// When a player inputs 'rock', 'paper', or 'scissors'
 // Initialize one round of RPS game against computer
-function playRound(playerSelection, computerSelection) {
+function playRound() {
+    // Get computer play
+    const computerSelection = getComputerChoice();
+    // Ask the player to input 'rock', 'paper', or 'scissors'
+    const playerSelection = prompt("Input 'rock', 'paper', or 'scissors'");
     // If the player plays the same thing as the computer, then print 'It's a tie!'
     if (playerSelection.toLowerCase() === computerSelection) {
         return "It's a tie!";
@@ -41,6 +40,7 @@ function playRound(playerSelection, computerSelection) {
         return "You Lose! Paper beats Rock.";
     }
 }
+
 // Initialize game of RPS game that is five rounds
 // After a round of RPS is over
 // If the player wins, then they earn one point
