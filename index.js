@@ -65,19 +65,21 @@ function playRound() {
 let computerScore = 0;
 let playerScore = 0;
 
-// Manual test to see if single round play and score counter can work multiple rounds
-console.log(playRound());
-console.log(computerScore);
-console.log(playerScore);
-console.log(playRound());
-console.log(computerScore);
-console.log(playerScore);
-console.log(playRound());
-console.log(computerScore);
-console.log(playerScore);
-
 // Initialize game of RPS game that is five rounds
-// After a round of RPS is over
-// If the player wins, then they earn one point
-// If the player loses, then the computer earns one point
-// After five rounds are over, declare winner of game
+function game() {
+    // After each round of RPS is over, declare result of round
+    console.log(playRound());
+    console.log(playRound());
+    console.log(playRound());
+    console.log(playRound());
+    console.log(playRound());
+    // After five rounds are over, declare winner of game
+    if (playerScore === computerScore) {
+        console.log(`It's a tie! You scored ${playerScore} points and the computer scored ${computerScore} points.`);
+    } else if (playerScore > computerScore) {
+        console.log(`You win! You scored ${playerScore} points and the computer scored ${computerScore} points.`);
+    } else if (playerScore < computerScore) {
+        console.log(`You lose. You scored ${playerScore} points and the computer scored ${computerScore} points.`);
+    }
+}
+game();
