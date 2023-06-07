@@ -11,6 +11,9 @@ function getComputerChoice() {
 }
 
 // Ask the player to input 'rock', 'paper', or 'scissors'
+let playerInput = prompt("Input 'rock', 'paper', or 'scissors'");
+let playerSelection = playerInput.toLowerCase();
+
 // If the player inputs something else, then print 'Error! Please input rock, paper, or scissors.'
 // Else initialize RPS game
 
