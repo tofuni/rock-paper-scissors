@@ -10,8 +10,9 @@ function getComputerChoice() {
     }
 }
 
-// If the player inputs something else, then print 'Error! Please input rock, paper, or scissors.'
-// Else initialize RPS game
+// Set computer and player score trackers
+let computerScore = 0;
+let playerScore = 0;
 
 // Initialize one round of RPS game against computer
 function playRound() {
@@ -60,10 +61,6 @@ function playRound() {
         return "You Lose! Paper beats Rock.";
     }
 }
-
-// Set computer and player score trackers
-let computerScore = 0;
-let playerScore = 0;
 
 // Initialize game of RPS game that is five rounds
 function game() {
