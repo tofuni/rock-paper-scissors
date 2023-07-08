@@ -18,8 +18,7 @@ let playerScore = 0;
 function playRound() {
     // Get computer play
     const computerSelection = getComputerChoice();
-    // Ask the player to input 'rock', 'paper', or 'scissors'
-    const playerSelection = prompt("Input 'rock', 'paper', or 'scissors'");
+    console.log(computerSelection);
     // If the player plays the same thing as the computer
     if (playerSelection.toLowerCase() === computerSelection) {
         // then print 'It's a tie!'
@@ -61,3 +60,12 @@ function playRound() {
         return "You Lose! Paper beats Rock.";
     }
 }
+
+// Play round of RPS with correct selection on button click
+const btnContainer = document.querySelector('.button-container');
+btnContainer.addEventListener('click', (e) => {
+    playerSelection = e.target.textContent;
+    console.log(playRound());
+    console.log(computerScore);
+    console.log(playerScore);
+})
