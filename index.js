@@ -61,11 +61,33 @@ function playRound() {
     }
 }
 
-// Play round of RPS with correct selection on button click
+// Target results, scores, and buttons
+const roundResult = document.querySelector('#round-result');
+const playScore = document.querySelector('#player-score');
+const compScore = document.querySelector('#computer-score');
+const gameResult = document.querySelector('#game-result');
 const btnContainer = document.querySelector('.button-container');
-btnContainer.addEventListener('click', (e) => {
+const btn = document.querySelectorAll('button');
+
+function disableButton() {
+    btn.forEach(elem => {
+        elem.disabled = true;
+    })
+}
+
+// Play round of RPS with correct selection on button click
+btnContainer.addEventListener('click', game);
+
+function game(e) {
     playerSelection = e.target.textContent;
-    console.log(playRound());
-    console.log(computerScore);
-    console.log(playerScore);
-})
+    roundResult.textContent = `${playRound()}`;
+    playScore.textContent = `Player Score: ${playerScore}`;
+    compScore.textContent = `Computer Score: ${computerScore}`;
+    if (playerScore >= 5) {
+        gameResult.textContent = `You won the game! Reload the page to play again.`;
+        disableButton();
+    } else if (computerScore >= 5) {
+        gameResult.textContent = `You lost the game. Reload the page to play again.`;
+        disableButton();
+    }
+}
