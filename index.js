@@ -56,7 +56,9 @@ function playRound() {
 }
 
 // Play round of RPS with correct selection on button click
-btnContainer.addEventListener('click', game);
+btn.forEach(elem => {
+    elem.addEventListener('click', game);
+})
 
 // Play RPS game, first to 5 points
 function game(e) {
