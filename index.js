@@ -62,7 +62,8 @@ btn.forEach(elem => {
 
 // Play RPS game, first to 5 points
 function game(e) {
-    playerSelection = e.target.textContent;
+    playerSelection = e.currentTarget.innerText;
+    console.log(playerSelection);
     roundResult.textContent = `${playRound()}`;
     playScore.textContent = `Player: ${playerScore}`;
     compScore.textContent = `Computer: ${computerScore}`;
