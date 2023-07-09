@@ -64,8 +64,8 @@ btn.forEach(elem => {
 function game(e) {
     playerSelection = e.target.textContent;
     roundResult.textContent = `${playRound()}`;
-    playScore.textContent = `Player Score: ${playerScore}`;
-    compScore.textContent = `Computer Score: ${computerScore}`;
+    playScore.textContent = `Player: ${playerScore}`;
+    compScore.textContent = `Computer: ${computerScore}`;
     if (playerScore >= 5) {
         gameResult.textContent = `You won the game! Reload the page to play again.`;
         disableButton();
