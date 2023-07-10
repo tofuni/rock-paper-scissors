@@ -72,14 +72,18 @@ btn.forEach(elem => {
 function game(e) {
     playerSelection = e.currentTarget.innerText;
     playChoice.textContent = playerSelection;
-    roundResult.textContent = `${playRound()}`;
-    playScore.textContent = `Player: ${playerScore}`;
-    compScore.textContent = `Computer: ${computerScore}`;
+    updateScore();
     if (playerScore >= 5) {
         winGame();
     } else if (computerScore >= 5) {
         loseGame();
     }
+}
+
+function updateScore() {
+    roundResult.textContent = `${playRound()}`;
+    playScore.textContent = `Player: ${playerScore}`;
+    compScore.textContent = `Computer: ${computerScore}`;
 }
 
 // Show game results
