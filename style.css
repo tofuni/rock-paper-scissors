@@ -104,3 +104,21 @@ header {
     font-weight: 600;
     color: #283618;
 }
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #d4a373;
+    padding: 1rem 0 0.5rem;
+}
+
+.fa.fa-github {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.fa.fa-github:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(360deg) scale(1.2);
+}
