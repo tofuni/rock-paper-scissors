@@ -234,6 +234,7 @@ footer {
         height: 175px;
     }
     #game-result {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+        padding-bottom: 1.5rem;
     }
 }
