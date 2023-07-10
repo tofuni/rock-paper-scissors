@@ -41,6 +41,7 @@ header {
     color: #283618;
     text-shadow: 1px 1px 2px #a5a58d;
 }
+
 .score-container {
     display: flex;
     justify-content: center;
@@ -121,4 +122,12 @@ footer {
 .fa.fa-github:hover {
     transition: transform 0.3s ease-in-out;
     transform: rotate(360deg) scale(1.2);
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+    .score-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
