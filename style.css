@@ -5,6 +5,7 @@
 
 body, p {
     font-family: 'Press Start 2P', cursive;
+    line-height: 2.5rem;
 }
 
 body {
@@ -43,7 +44,7 @@ header {
 .score-container {
     display: flex;
     justify-content: center;
-    padding-top: 1rem;
+    padding: 1.5rem;
 }
 
 .score-box {
@@ -59,7 +60,7 @@ header {
 }
 
 .choice {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #283618;
 }
 
@@ -68,6 +69,16 @@ header {
     font-size: 1rem;
     padding-top: 2rem;
     color: #283618;
+}
+
+.player-victory {
+    color: #06d6a0;
+    text-shadow: 1px 1px 2px #ffd166;
+}
+
+.computer-victory {
+    color: #e63946;
+    text-shadow: 1px 1px 2px #073b4c;
 }
 
 /* RPS Buttons */

@@ -7,6 +7,8 @@ const roundResult = document.querySelector('#round-result');
 const playScore = document.querySelector('#player-score');
 const compScore = document.querySelector('#computer-score');
 const gameResult = document.querySelector('#game-result');
+const playChoice = document.querySelector('#player-choice');
+const compChoice = document.querySelector('#computer-choice');
 
 // Target button nodes
 const btnContainer = document.querySelector('.button-container');
@@ -17,11 +19,11 @@ const btn = document.querySelectorAll('button');
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
-        return "rock";
+        return "Rock";
     } else if (randomNumber === 1) {
-        return "paper";
+        return "Paper";
     } else if (randomNumber === 2) {
-        return "scissors";
+        return "Scissors";
     }
 }
 
@@ -29,27 +31,27 @@ function getComputerChoice() {
 function playRound() {
     // Get computer play
     const computerSelection = getComputerChoice();
-    console.log(computerSelection);
+    compChoice.textContent = computerSelection;
     // If the player plays the same thing as the computer, is a tie
-    if (playerSelection.toLowerCase() === computerSelection) {
+    if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         return "It's a tie!";
         // Remaining round result scenarios
-    } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors') {
+    } else if (playerSelection.toLowerCase() === 'rock' && computerSelection.toLowerCase() === 'scissors') {
         ++playerScore;
         return "You Win! Rock beats Scissors.";
-    } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper') {
+    } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection.toLowerCase() === 'paper') {
         ++playerScore;
         return "You Win! Scissors beats Paper.";
-    } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock') {
+    } else if (playerSelection.toLowerCase() === 'paper' && computerSelection.toLowerCase() === 'rock') {
         ++playerScore;
         return "You Win! Paper beats Rock.";
-    } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock') {
+    } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection.toLowerCase() === 'rock') {
         ++computerScore;
         return "You Lose! Rock beats Scissors.";
-    } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors') {
+    } else if (playerSelection.toLowerCase() === 'paper' && computerSelection.toLowerCase() === 'scissors') {
         ++computerScore;
         return "You Lose! Scissors beats Paper.";
-    } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper') {
+    } else if (playerSelection.toLowerCase() === 'rock' && computerSelection.toLowerCase() === 'paper') {
         ++computerScore;
         return "You Lose! Paper beats Rock.";
     }
@@ -63,14 +65,16 @@ btn.forEach(elem => {
 // Play RPS game, first to 5 points
 function game(e) {
     playerSelection = e.currentTarget.innerText;
-    console.log(playerSelection);
+    playChoice.textContent = playerSelection;
     roundResult.textContent = `${playRound()}`;
     playScore.textContent = `Player: ${playerScore}`;
     compScore.textContent = `Computer: ${computerScore}`;
     if (playerScore >= 5) {
+        gameResult.classList.toggle('player-victory');
         gameResult.textContent = `You won the game! Reload the page to play again.`;
         disableButton();
     } else if (computerScore >= 5) {
+        gameResult.classList.toggle('computer-victory');
         gameResult.textContent = `You lost the game. Reload the page to play again.`;
         disableButton();
     }
