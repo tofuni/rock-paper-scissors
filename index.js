@@ -1,6 +1,8 @@
-// Set computer and player score trackers
+// Set score trackers and RPS selections
 let computerScore = 0;
 let playerScore = 0;
+let playerSelection;
+let computerSelection;
 
 // Target results and scores nodes 
 const roundResult = document.querySelector('#round-result');
@@ -36,7 +38,7 @@ function getComputerChoice() {
 // Initialize one round of RPS game against computer
 function playRound() {
     // Get computer play
-    const computerSelection = getComputerChoice();
+    computerSelection = getComputerChoice();
     compChoice.textContent = computerSelection;
     // If the player plays the same thing as the computer, is a tie
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
@@ -70,7 +72,7 @@ btn.forEach(elem => {
 
 // Play RPS game, first to 5 points
 function game(e) {
-    playerSelection = e.currentTarget.innerText;
+    playerSelection = e.currentTarget.value;
     playChoice.textContent = playerSelection;
     updateScore();
     if (playerScore >= 5) {
