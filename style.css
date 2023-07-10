@@ -15,6 +15,10 @@ body {
     flex-direction: column;
 }
 
+main {
+    margin-top: auto;
+}
+
 header {
     margin-top: 0;
     padding-top: 0;
@@ -177,6 +181,9 @@ footer {
 @media (max-width: 767px) {
     #game-title {
         font-size: 1.5rem;
+    }
+    .round-result {
+        height: 80px;
     }
     #round-result {
         font-size: 1rem;
