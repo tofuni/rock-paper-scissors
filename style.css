@@ -36,7 +36,7 @@ header {
 
 #game-title {
     color: #ffffff;
-    text-shadow: 1px 1px 2px pink;
+    text-shadow: 3px 2px 2px pink;
 }
 
 /* Results and Scores */
@@ -69,13 +69,24 @@ header {
 
 .choice {
     font-size: 1.5rem;
-    color: #283618;
 }
 
 .score {
     font-size: 1rem;
     padding-top: 2rem;
     color: #283618;
+}
+
+#player-choice,
+#player-score {
+    color: #ffffff;
+    text-shadow: 3px 2px 1px #06d6a0;
+}
+
+#computer-choice,
+#computer-score {
+    color: #ffffff;
+    text-shadow: 3px 2px 1px #e76f51;
 }
 
 /* RPS Buttons */
@@ -142,7 +153,7 @@ footer {
 
 #game-result {
     color: #ffffff;
-    text-shadow: 1px 1px 2px pink;
+    text-shadow: 3px 2px 2px pink;
     font-size: 1.25rem;
 }
 
