@@ -6,13 +6,19 @@ let playerScore = 0;
 const roundResult = document.querySelector('#round-result');
 const playScore = document.querySelector('#player-score');
 const compScore = document.querySelector('#computer-score');
-const gameResult = document.querySelector('#game-result');
 const playChoice = document.querySelector('#player-choice');
 const compChoice = document.querySelector('#computer-choice');
+const gameResult = document.querySelector('#game-result');
+
 
 // Target button nodes
 const btnContainer = document.querySelector('.button-container');
 const btn = document.querySelectorAll('button');
+
+// Target modal nodes
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const resetBtn = document.querySelector('#play-again');
 
 
 // Declare a function that represents the computer's play
@@ -70,12 +76,10 @@ function game(e) {
     playScore.textContent = `Player: ${playerScore}`;
     compScore.textContent = `Computer: ${computerScore}`;
     if (playerScore >= 5) {
-        gameResult.classList.toggle('player-victory');
-        gameResult.textContent = `You won the game! Reload the page to play again.`;
+        winGame();
         disableButton();
     } else if (computerScore >= 5) {
-        gameResult.classList.toggle('computer-victory');
-        gameResult.textContent = `You lost the game. Reload the page to play again.`;
+        loseGame();
         disableButton();
     }
 }
@@ -85,4 +89,19 @@ function disableButton() {
     btn.forEach(elem => {
         elem.disabled = true;
     })
+}
+
+function winGame() {
+    gameResult.textContent = `You won! Your final score was ${playerScore}.`;
+    showModal();
+}
+
+function loseGame() {
+    gameResult.textContent = `You lost. Your final score was ${playerScore}.`;
+    showModal();
+}
+
+function showModal() {
+    modal.classList.toggle('hidden');
+    overlay.classList.toggle('hidden');
 }
