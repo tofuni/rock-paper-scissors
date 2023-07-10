@@ -77,18 +77,15 @@ function game(e) {
     compScore.textContent = `Computer: ${computerScore}`;
     if (playerScore >= 5) {
         winGame();
-        disableButton();
     } else if (computerScore >= 5) {
         loseGame();
-        disableButton();
     }
 }
 
-// Disable buttons to prevent further play after game is over
-function disableButton() {
-    btn.forEach(elem => {
-        elem.disabled = true;
-    })
+// Show game results
+function showModal() {
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
 }
 
 function winGame() {
@@ -101,7 +98,15 @@ function loseGame() {
     showModal();
 }
 
-function showModal() {
+// Reset game
+resetBtn.addEventListener('click', (e) => {
     modal.classList.toggle('hidden');
     overlay.classList.toggle('hidden');
-}
+    playChoice.textContent = `?`;
+    compChoice.textContent = `?`;
+    playerScore = 0;
+    playScore.textContent = `Player: ${playerScore}`;
+    computerScore = 0;
+    compScore.textContent = `Computer: ${computerScore}`;
+    roundResult.textContent = `Take your pick - first to 5 points wins`;
+})
