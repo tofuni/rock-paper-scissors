@@ -10,6 +10,9 @@ body, p {
 
 body {
     background-color: #fefae0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -101,6 +104,7 @@ footer {
     justify-content: center;
     background-color: #d4a373;
     padding: 1rem 0 0.5rem;
+    margin-top: auto;
 }
 
 .fa.fa-github {
@@ -192,7 +196,7 @@ footer {
     .score,
     #game-result,
     #play-again {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
     .score {
         padding-top: 0;
